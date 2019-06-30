@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>class 1 basic html</title>
+
+<style type="text/css"></style>
+
+
+
+
+</head>
+
+
+<body>
+
+	<audio loop id="mySong"> 
+		 <source src="audio/cycle.mp3" type="audio/mpeg">
+
+	</audio>
+
+	<!-- <audio controls loop></audio> -->
+	
+	<button onclick="start()" id="start">start</button>
+
+	<button onclick="stop()" id="stop">stop</button>
+	<br> 
+	<br> 
+	<button onclick="rando()" id="randomLoc">random location </button>
+	<br> 
+	<br>
+	<label> rate</label><input type="range" onChange="playRate(this)" min="0" max="200"/> 
+	<br>
+	<label> volume</label><input type="range" onChange="volume(this)" min="0" max="100"/> 
+
+
+
+
+<script type="text/javascript"> 
+
+var song = document.getElementById("mySong"); 
+
+function start(){
+	song.play(); 
+}
+
+function stop(){
+	song.pause(); 
+}
+
+function rando(){
+	// use the properties at the link below for the audio html tag to change the location of the playback to a random point somewhere in the total duration of the song. 
+	//https://www.w3schools.com/tags/ref_av_dom.asp
+	//you will need to get the dong duration then use the Math.random function in js to generate a random number, then convert it back to an integer
+
+	console.log("the random location is ", //add your variable naame here); 
+
+}
+
+
+function playRate(element){
+	var intRate = parseInt(element.value);
+	//convert this integer into a floating point number in the range of 0.0 to 2.0
+
+	console.log(element.value); 
+}
+
+function volume(element){
+	var vInt = parseInt(element.value);
+	//convert this integer to a floating point number (decimal) between 0.0 and 1.0
+
+	console.log("the volume is ", vInt); 
+}
+
+
+
+
+</script>
+
+</body>
+</html>
