@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AD 2019 Test</title>
+
+<!-- <script type="text/javascript" src="./deps/Tone.js-master/build/Tone.js"> </script>
+ -->
+<script type="text/javascript" src="../build/Tone.js"> </script>
+
+
+</head>
+
+<body>
+
+<button onclick="start()"> 
+start 
+</button>
+
+<button onclick="stop()"> 
+stop 
+</button>
+
+<script type="text/javascript"> 
+
+console.log("testing, testing, 1...2...3"); 
+
+var osc = new Tone.Oscillator({
+			"type" : "sawtooth",
+			"frequency" : 2200,
+			"volume" : -16
+
+}).toMaster(); 
+
+ 
+
+var osc2 = new Tone.Oscillator({
+			"type" : "square",
+			"frequency" : 220,
+			"volume" : -16
+		}).toMaster();
+
+function start(){
+	osc.start(); 
+	osc2.start(); 
+}
+
+function stop(){
+	osc.stop(); 
+	osc2.stop(); 
+
+	osc.volume.value = -100; 
+	osc2.volume.value = -100; 
+	//the volume is measured in db so that is way it is -100 (versus 0)
+	//here the setVolume 2nd argument does not need a + 
+	// console.log(osc.output.gain.value); 
+}
+
+// osc.start();
+// osc2.start();  
+
+
+</script>
+
+</body>
+</html>
